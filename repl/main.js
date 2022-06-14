@@ -43,7 +43,7 @@ async function main() {
   console.log(pyodide.runPython('np.ones((3, 3)))'))
 })  
   pyodide.loadPackage('lxml').then(() => {
-  console.log('LXML installed'))
+  console.log('LXML installed')
 })
   return pyodide;
 }
