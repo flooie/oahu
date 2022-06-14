@@ -36,6 +36,15 @@ async function main() {
       sys.version
   `);
   output.value += "\n" + "Python Ready !" + "\n";
+  
+  pyodide.loadPackage('numpy').then(() => {
+  // numpy is now available
+  pyodide.runPython('import numpy as np')
+  console.log(pyodide.runPython('np.ones((3, 3)))'))
+})  
+  pyodide.loadPackage('lxml').then(() => {
+  console.log('LXML installed'))
+})
   return pyodide;
 }
 // run the main funciton
